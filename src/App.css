@@ -3,3 +3,6 @@
 body{
 font-family: 'Inter';
 }
+header{
+    z-index: 10001 !important;
+}
