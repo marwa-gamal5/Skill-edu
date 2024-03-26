@@ -13,7 +13,9 @@ export default {
         'skyBlue':'#58AEDD',
         'babyBlue':'#B8E1F3',
         'baleBlue':'#DEF1FF',
+        'lightsky':'#f3f9fd',
         'whiteSmoke':'#F9F9F9',
+
 
 
 
