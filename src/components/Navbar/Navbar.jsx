@@ -45,7 +45,7 @@ function Navbar() {
   return (
     <>
     <header className="w-full bg-darkMidnightBlue md:bg-transparent fixed right-0 left-0 top-0">
-        <div className=' flex justify-between items-center  w-full bg-darkMidnightBlue py-4 lg:px-14 px-4'>
+        <div className=' md:flex  hidden justify-between items-center  w-full bg-darkMidnightBlue py-4 lg:px-14 px-4'>
             <div className='flex '>
             <div className='flex align-center '>
                 <div><SlLocationPin className='text-whiteSmoke  text-[15px] mt-[2px]'/></div>
@@ -99,29 +99,39 @@ function Navbar() {
 
                 </div>
                 {/* menu btn for only mobile device */}
-    <div className="md:hidden ">
-        <button onClick={toggleMenu} className=" text-red-600 focus:outline-none focus:text-gray-500">
-            {
-                isMenuOpen ? (<IoClose className="h-6 w-6 " />) : (<FaAlignJustify className="h-6 w-6 " />)
-            }
+                <div className="md:hidden ">
+                    <button onClick={toggleMenu} className=" text-whiteSmoke focus:outline-none ">
+                        {
+                            isMenuOpen ? (<IoClose className="h-6 w-6 "/>) : (<FaAlignJustify className="h-6 w-6 "/>)
+                        }
 
-        </button>
+                    </button>
 
-    </div>
-    </div>
-    {/* nav item for mobile device  */}
+                </div>
+            </div>
+            {/* nav item for mobile device  */}
 
-    <div className={`space-x-4 px-4 mt-16 py-7 bg-skyBlue ${isMenuOpen ? 'block fixed top-0  right-0 left-0':'hidden'}`}>
+            <div
+                className={`lg:hidden xl:hidden space-x-4 px-4 mt-16 py-6 ${isMenuOpen ? 'bg-navyBlueBlur' : ''} ${isMenuOpen ? 'block fixed top-0 right-0 left-0' : 'hidden'}`}>
+                <style jsx>{`
+                    .bg-navyBlueBlur {
+                        background-color: rgba(35, 83, 132, 0.5); /* Change the alpha value to control the blur intensity */
+                        backdrop-filter: blur(0.2px); /* Adjust the blur radius as needed */
+                    }
+                `}</style>
 
-            <li className="block text-2xl text-white  hover:text-red-500">Home</li>
-            <li className="block text-2xl text-white  hover:text-red-500">About Us</li>
-            <li className="block text-2xl text-white  hover:text-red-500">Diploma</li>
-            <li className="block text-2xl text-white  hover:text-red-500">Students</li>
-            <li className="block text-2xl text-white  hover:text-red-500">Accreditations</li>
-            <li className="block text-2xl text-white  hover:text-red-500">Library</li>
-            <li className="block text-2xl text-white  hover:text-red-500">Portal</li>
-            <li className="block text-2xl text-white  hover:text-red-500">Contact Us</li>
-    </div>
+                <ul>
+                    <li className="block text-2xl text-white hover:text-skyBlue  hover:text-[25px] ">Home</li>
+                    <li className="block text-2xl text-white hover:text-skyBlue  hover:text-[25px] ">About Us</li>
+                    <li className="block text-2xl text-white hover:text-skyBlue  hover:text-[25px] ">Diploma</li>
+                    <li className="block text-2xl text-white hover:text-skyBlue  hover:text-[25px] ">Students</li>
+                    <li className="block text-2xl text-white hover:text-skyBlue  hover:text-[25px] ">Accreditations</li>
+                    <li className="block text-2xl text-white hover:text-skyBlue  hover:text-[25px] ">Library</li>
+                    <li className="block text-2xl text-white hover:text-skyBlue  hover:text-[25px] ">Portal</li>
+                    <li className="block text-2xl text-white hover:text-skyBlue  hover:text-[25px] ">Contact Us</li>
+                </ul>
+            </div>
+
         </nav>
     </header>
     </>
